@@ -21,6 +21,39 @@ const Home = () => {
     { value: "html-tailwind-bootstrap", label: "HTML + Tailwind + Bootstrap" },
   ];
 
+  const presetPrompts = [
+    {
+      id: 1,
+      title: "Pricing Card",
+      prompt:
+        "A modern pricing card with three tiers (Basic, Pro, Enterprise). Include gradient backgrounds, hover animations, feature lists with checkmarks, and a call-to-action button for each tier.",
+    },
+    {
+      id: 2,
+      title: "Hero Section",
+      prompt:
+        "A stunning hero section with a gradient background, animated headline text, a subtitle, two CTA buttons (primary and secondary), and a floating illustration or mockup image on the right side.",
+    },
+    {
+      id: 3,
+      title: "Contact Form",
+      prompt:
+        "An elegant contact form with fields for name, email, subject, and message. Include smooth focus animations, floating labels, form validation styling, and a gradient submit button.",
+    },
+    {
+      id: 4,
+      title: "Testimonial Slider",
+      prompt:
+        "A testimonial carousel with customer reviews, including profile pictures, star ratings, customer names, and their testimonials. Add smooth slide transitions and navigation dots.",
+    },
+    {
+      id: 5,
+      title: "Feature Grid",
+      prompt:
+        "A 3-column feature grid showcasing product features. Each card should have an icon, title, description, gradient borders on hover, and smooth animations when scrolling into view.",
+    },
+  ];
+
   const [outputScreen, setOutputScreen] = useState(false);
   const [tab, setTab] = useState(1);
   const [prompt, setPrompt] = useState("");
@@ -98,6 +131,12 @@ Requirements:
     URL.revokeObjectURL(url);
     toast.success("File downloaded");
   };
+
+  const handlePresetClick = (presetPrompt) => {
+    setPrompt(presetPrompt);
+  };
+
+  const isGenerateDisabled = !prompt.trim() || loading;
 
   return (
     <>
@@ -183,22 +222,43 @@ Requirements:
             placeholder="Describe your component in detail and AI will generate it..."
           ></textarea>
 
-          <div className="flex items-center justify-between mt-3">
-            <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-              Click on generate button to get your code
-            </p>
-            <button
-              onClick={getResponse}
-              className="flex items-center p-3 rounded-lg border-0 bg-gradient-to-r from-purple-400 to-purple-600 px-5 gap-2 transition-all hover:opacity-80 hover:scale-105 active:scale-95"
+          <div className="mt-4">
+            <p
+              className="text-sm font-semibold mb-2"
+              style={{ color: "var(--text-primary)" }}
             >
-              {loading ? <ClipLoader color="white" size={18} /> : <BsStars />}
-              Generate
-            </button>
+              Try these presets:
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {presetPrompts.map((preset) => (
+                <button
+                  key={preset.id}
+                  onClick={() => handlePresetClick(preset.prompt)}
+                  className="px-3 py-2 rounded-lg text-sm transition-all hover:scale-105 active:scale-95"
+                  style={{
+                    backgroundColor: "var(--tertiary-bg)",
+                    color: "var(--text-primary)",
+                    border: "1px solid var(--border-color)",
+                  }}
+                  title={preset.prompt}
+                >
+                  {preset.title}
+                </button>
+              ))}
+              <button
+                onClick={getResponse}
+                disabled={isGenerateDisabled}
+                className="flex items-center p-3 rounded-lg border-0 bg-gradient-to-r from-purple-400 to-purple-600 px-5 gap-2 transition-all hover:opacity-80 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ml-auto"
+              >
+                {loading ? <ClipLoader color="white" size={18} /> : <BsStars />}
+                Generate
+              </button>
+            </div>
           </div>
         </div>
 
         <div
-          className="relative mt-2 w-full h-[80vh] rounded-xl overflow-hidden"
+          className="relative mt-5 w-full h-[80vh] rounded-xl overflow-hidden"
           style={{ backgroundColor: "var(--secondary-bg)" }}
         >
           {!outputScreen ? (

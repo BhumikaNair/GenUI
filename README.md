@@ -1,193 +1,158 @@
-# 🚀 AI Component Generator
+# ✨ GenUI - Generate what you imagine, instantly
 
 <div align="center">
-
-![React](https://img.shields.io/badge/React-19.1.1-blue?style=for-the-badge&logo=react)
-![Vite](https://img.shields.io/badge/Vite-7.1.2-purple?style=for-the-badge&logo=vite)
-![Tailwind](https://img.shields.io/badge/Tailwind-3.4.17-teal?style=for-the-badge&logo=tailwindcss)
-![Google AI](https://img.shields.io/badge/Google%20AI-Gemini-orange?style=for-the-badge&logo=google)
-
-**Generate beautiful, responsive UI components with the power of AI! 🎨✨**
-
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-green?style=for-the-badge)](https://your-demo-link.com)
-[![GitHub](https://img.shields.io/badge/📁%20GitHub-View%20Source-black?style=for-the-badge&logo=github)](https://github.com/your-username/ai-component-generator)
-
+  <img src="public/logo.svg" alt="GenUI Logo" width="200"> <br/><br/>
+  
+  **An AI-powered UI component generator that transforms your ideas into beautiful, responsive web components instantly with modern frameworks and real-time preview.**
+  
+  [![React](https://img.shields.io/badge/React-19.1.1-blue.svg)](https://reactjs.org/)
+  [![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF.svg)](https://vitejs.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-06B6D4.svg)](https://tailwindcss.com/)
+  [![Google AI](https://img.shields.io/badge/Google%20AI-Gemini%202.5-4285F4.svg)](https://ai.google.dev/)
+  [![Monaco Editor](https://img.shields.io/badge/Monaco-4.7.0-2C2C32.svg)](https://microsoft.github.io/monaco-editor/)
+  [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 </div>
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 🤖 **AI-Powered Generation** - Powered by Google Gemini AI
-- 🎨 **Multiple Frameworks** - HTML, CSS, Tailwind, Bootstrap support
-- 📱 **Responsive Design** - Mobile-first, modern UI components
-- ⚡ **Real-time Preview** - See your components instantly
-- 📋 **One-Click Copy** - Copy generated code to clipboard
-- 💾 **Export Functionality** - Download components as HTML files
-- 🌙 **Dark Theme** - Beautiful dark mode interface
-- 🔧 **Code Editor** - Built-in Monaco editor for code viewing
+- **🤖 AI-Powered Generation** - Uses Google Gemini 2.5 Flash to transform natural language into beautiful UI components
+- **⚡ Instant Component Building** - Generate fully functional, responsive components in seconds
+- **🎨 Live Code Editor** - Monaco Editor with real-time syntax highlighting and code editing
+- **👁️ Live Preview** - See your component render in real-time with iframe preview
+- **🔧 Multiple Framework Support** - Generate components with HTML+CSS, Tailwind, Bootstrap, or JavaScript
+- **🎯 Smart Presets** - Quick-start templates for common components (Pricing Cards, Hero Sections, Forms, etc.)
+- **🌓 Dark/Light Theme** - Toggle between dark and light modes with smooth transitions
+- **📥 Export & Download** - Copy code to clipboard or download as HTML file
+- **🔄 Refresh & Open in New Tab** - Full preview controls for better testing
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture
 
-| Category | Technology |
-|----------|------------|
-| **Frontend** | React 19.1.1, Vite 7.1.2 |
-| **Styling** | Tailwind CSS 3.4.17 |
-| **AI Integration** | Google Gemini AI |
-| **Code Editor** | Monaco Editor |
-| **Icons** | React Icons |
-| **Notifications** | React Toastify |
+```
+ai-component-generator/
+├── 📁 public/
+│   ├── logo.svg                     # 🎨 Application logo
+│   └── favicon.ico                  # 🏷️ Favicon
+│
+├── 📁 src/
+│   ├── App.jsx                      # 🎯 Main app component with routing
+│   ├── App.css                      # 🎨 Global styles with theme variables
+│   ├── index.css                    # 🎨 Tailwind directives
+│   ├── main.jsx                     # 🚀 Application entry point
+│   │
+│   ├── 📁 components/
+│   │   └── Navbar.jsx               # 📋 Navigation with theme toggle & GitHub link
+│   │
+│   └── 📁 pages/
+│       ├── Home.jsx                 # 🏠 Main component generator interface
+│       └── NoPage.jsx               # 🚫 404 error page
+│
+├── 📁 config files/
+│   ├── vite.config.js               # ⚡ Vite configuration
+│   ├── tailwind.config.js           # 🎨 Tailwind CSS configuration
+│   ├── postcss.config.js            # 🔧 PostCSS configuration
+│   └── eslint.config.js             # 🧹 ESLint configuration
+│
+├── index.html                       # 📄 HTML entry point
+├── package.json                     # 📦 Dependencies and scripts
+└── README.md                        # 📖 Project documentation
+```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 16+ 
-- npm or yarn
-- Google Gemini API key
 
-### Installation
+- **Node.js** 18+
+- **npm/yarn/pnpm**
+- **Google AI API Key** (Gemini 2.5 Flash)
 
-1. **Clone the repository** 📥
-   ```bash
-   git clone https://github.com/BhumikaNair/ai-component-generator
-   cd ai-component-generator
-   ```
-
-2. **Install dependencies** 📦
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Set up environment variables** 🔐
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Edit `.env` and add your Google Gemini API key:
-   ```env
-   VITE_GOOGLE_GEMINI_API_KEY=your_api_key_here
-   ```
-   
-   Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey) 🔑
-
-4. **Start the development server** 🏃‍♂️
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-5. **Open your browser** 🌐
-   Navigate to `http://localhost:5173`
-
-## 🎯 How to Use
-
-1. **Choose Framework** 🎨
-   - Select from HTML+CSS, Tailwind, Bootstrap, or combinations
-
-2. **Describe Your Component** ✍️
-   - Write a detailed description of what you want to build
-   - Be specific about colors, layout, animations, etc.
-
-3. **Generate** ⚡
-   - Click the "Generate" button and watch AI work its magic!
-
-4. **Preview & Export** 👀
-   - View your component in real-time
-   - Copy code or download as HTML file
-
-## 📸 Screenshots
-
-<div align="center">
-
-![Main Interface](https://via.placeholder.com/800x400/1a1a1a/ffffff?text=🎨+AI+Component+Generator+Interface)
-*Beautiful dark theme interface with AI generation*
-
-![Code Preview](https://via.placeholder.com/800x400/2d2d2d/ffffff?text=💻+Code+Editor+and+Preview)
-*Built-in code editor with live preview*
-
-</div>
-
-## 🎨 Supported Frameworks
-
-| Framework | Description | Status |
-|-----------|-------------|--------|
-| **HTML + CSS** | Pure HTML and CSS components | ✅ |
-| **HTML + Tailwind** | Modern utility-first CSS | ✅ |
-| **HTML + Bootstrap** | Popular CSS framework | ✅ |
-| **HTML + CSS + JS** | Interactive components | ✅ |
-| **HTML + Tailwind + Bootstrap** | Combined frameworks | ✅ |
-
-## 🔧 Available Scripts
+### 1. Clone & Setup
 
 ```bash
-# Development
-npm run dev          # 🚀 Start development server
+# Clone the repository
+git clone https://github.com/BhumikaNair/GenUI
+cd GenUI
 
-# Production
-npm run build        # 🏗️ Build for production
-npm run preview      # 👀 Preview production build
-
-# Code Quality
-npm run lint         # 🔍 Run ESLint
+# Install dependencies
+npm install
 ```
 
-## 🌟 Example Prompts
+### 2. Environment Configuration
 
-Try these example prompts to get started:
+Create a `.env` file in the root directory:
 
-- 🎨 *"Create a modern login form with glassmorphism effect and smooth animations"*
-- 📱 *"Build a responsive navigation bar with mobile hamburger menu"*
-- 🛒 *"Design a product card component with hover effects and add to cart button"*
-- 📊 *"Make a dashboard widget with charts and statistics"*
-- 🎭 *"Create a testimonial slider with customer reviews"*
+```env
+VITE_GOOGLE_GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-## 🤝 Contributing
+**Note:** Environment variables in Vite must be prefixed with `VITE_` to be exposed to the client.
 
-We welcome contributions! Here's how you can help:
+### 3. Start Development Server
 
-1. **Fork the repository** 🍴
-2. **Create a feature branch** 🌿
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit your changes** 💾
-   ```bash
-   git commit -m "Add amazing feature ✨"
-   ```
-4. **Push to the branch** 🚀
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open a Pull Request** 🔄
+```bash
+# Start the Vite development server
+npm run dev
+```
 
-## 📝 License
+### 4. Access the Application
+
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+
+### 5. Build for Production
+
+```bash
+# Build the application
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## 🛠️ Tech Stack
+
+- **⚡ Vite 7** - Next-generation frontend tooling
+- **⚛️ React 19** - Modern UI library with hooks
+- **🎨 Tailwind CSS 3** - Utility-first CSS framework
+- **🤖 Google Gemini AI 2.5** - Advanced language model for component generation
+- **💻 Monaco Editor** - VS Code-powered code editor
+- **🔀 React Router** - Client-side routing
+- **🎯 React Select** - Beautiful dropdown component
+- **🎨 React Icons** - Popular icon library
+- **🔔 React Toastify** - Elegant notifications
+- **⚡ React Spinners** - Loading indicators
+
+## 🔑 Required API Keys
+
+### 🧠 Google Gemini AI API Key
+
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a new API key for Gemini 2.5 Flash model
+3. Copy the API key to your `.env` file
+4. [Documentation](https://ai.google.dev/docs)
+
+## 🎯 Supported Frameworks
+
+GenUI can generate components with:
+
+- **HTML + CSS** - Pure HTML with custom CSS
+- **HTML + Tailwind CSS** - Modern utility-first styling
+- **HTML + Bootstrap** - Popular CSS framework
+- **HTML + CSS + JavaScript** - Interactive components
+- **HTML + Tailwind + Bootstrap** - Combined framework power
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Google Gemini AI](https://ai.google.dev/) for the amazing AI capabilities
-- [React](https://reactjs.org/) for the awesome framework
-- [Tailwind CSS](https://tailwindcss.com/) for beautiful styling
-- [Monaco Editor](https://microsoft.github.io/monaco-editor/) for the code editor
-
-## 📞 Support
-
-Having issues? We're here to help! 🆘
-
-- 🐛 **Bug Reports**: [Open an issue](https://github.com/your-username/ai-component-generator/issues)
-- 💡 **Feature Requests**: [Request a feature](https://github.com/your-username/ai-component-generator/issues)
-- 💬 **Discussions**: [Join the conversation](https://github.com/your-username/ai-component-generator/discussions)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ and lots of ☕**
+**Built with ❤️ for instant UI component creation**
 
-[⭐ Star this repo](https://github.com/your-username/ai-component-generator) if you found it helpful!
+[🌟 Star this repo](../../stargazers) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues)
+
+Made by [Bhumika Nair](https://github.com/BhumikaNair)
 
 </div>
