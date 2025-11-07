@@ -9,7 +9,8 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   background-color: var(--primary-bg);
-  color: #fff;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -20,6 +21,18 @@ html {
   --primary-bg: #09090B;
   --secondary-bg: #141319;
   --tertiary-bg: #17171C;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --border-color: #1f2937;
+}
+
+[data-theme="light"] {
+  --primary-bg: #f9fafb;
+  --secondary-bg: #ffffff;
+  --tertiary-bg: #f3f4f6;
+  --text-primary: #000000;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
 }
 
 .sp-text {
@@ -32,8 +45,14 @@ html {
 .icon{
   padding: 15px;
   font-size: 20px;
-  border: 1px solid #1f2937;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   background-color: var(--secondary-bg);
   cursor: pointer;
-};
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.icon:hover {
+  background-color: var(--tertiary-bg);
+}
